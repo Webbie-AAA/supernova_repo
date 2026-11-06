@@ -8,3 +8,4 @@ app.use(express.json())
 //Then use for the router
 
 
+module.exports = app;
