@@ -1,9 +1,11 @@
-DROP mock_table IF EXISTS;
+DROP TABLE IF EXISTS mock_table;
 
 CREATE TABLE mock_table (
     id INT GENERATED ALWAYS AS IDENTITY,
-    col_1 VARCHAR(100) NOT NULL
+    word VARCHAR(100) NOT NULL,
+    num VARCHAR(30) NOT NULL
 );
 
-INSERT INTO mock_table (col_1)
-VALUES ('is the connection working?');
+INSERT INTO mock_table (word, num)
+VALUES 
+    ('is it connected?', 200);

@@ -12,5 +12,3 @@ db.query(sql)
     })
     .catch(error=>console.log(error))
 
-/Users/umelbaneen/Desktop/project_alpha_g2/app/database/setup-db.js
-/Users/umelbaneen/Desktop/project_alpha_g2/app/database/setup.sql
