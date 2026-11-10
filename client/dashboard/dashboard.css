@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .navbar-title {
+        font-size: 32px;
+    }
+
+    .nav-link {
+        font-size: 18px;
+    }
+
+    .start-button {
+        width: 170px;
+        font-size: 23px;
+    }
+
+    .activity-card {
+        min-height: 340px;
+    }
+
+    footer {
+        min-height: 80px;
+    }
+
+    footer a {
+        font-size: 20px;
+    }
+}
+
+.navbar {
+    background-color: #202020;
+    border: 3px solid #111;
+    min-height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-title {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    text-decoration: none;
+}
+
+.nav-link {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #f0d7a3;
+}
+
+
+.dashboard-section {
+    flex: 1;
+    background-color: #F5F5F0;
+    padding: 20px 5%;
+}
+
+.welcome-section {
+    padding: 18px 25px;
+    margin-bottom: 40px;
+}
+
+.welcome-section h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.welcome-section p {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+
+.activity-card {
+    background-color: white;
+    border: 3px solid #a09d96;
+    border-radius: 12px;
+    min-height: 390px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 30px;
+    margin-bottom: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.activity-card:hover {
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.activity-card h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2.5px solid rgba(34, 34, 34, 0.4);
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+.activity-card p {
+    font-size: 19px;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 280px;
+    margin-top: 25px;
+
+}
+
+.activities .col-md-6:first-child .activity-card {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)),
+        url("../assets/flashcard.jpg");
+}
+
+.activities .col-md-6:last-child .activity-card {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)),
+        url("../assets/greatescape.jpg");
+}
+
+.start-button {
+    display: inline-block;
+    width: 190px;
+    background-color: #777;
+    color: white;
+    border: 3px solid #222;
+    border-radius: 20px;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 500;
+    margin-top: auto;
+    margin-bottom: 20px;
+    transition: background-color 0.5s ease,
+    transform 0.5s ease;
+}
+
+.start-button:hover {
+    background-color: #f0d7a3;
+    color: white;
+    transform: scale(1.04);
+}
+
+
+footer {
+    min-height: 80px;
+    background-color: #202020;
+    border: 3px solid #111;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #f0d7a3;
+}
+
+
