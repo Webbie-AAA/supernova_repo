@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up / Registration Form </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="login.css" />
+    <script defer src="../login/login.js"></script>
+  </head>
+  <body>
+    <nav class="navbar py-3 px-4">
+      <a href="homepage.html" class="navbar-title mb-0"> The Great Escape </a>
+
+      <div class="d-flex align-items-center gap-4">
+        <a href="#" class="nav-link">About</a>
+        <a href="register.html" class="nav-link">Sign Up Here</a>
+      </div>
+    </nav>
+    <div class="container">
+    <section id="login_page">
+      <div class="center">
+          <h1>Login</h1>
+          <form id="login_form">
+              <div class="txt_field">
+                  <input type="email" name="email" id='user_email' required>
+                  <label>Email</label>
+              </div>
+              <div class="txt_field">
+                  <input type="password" name="password" id='user_password' required>
+                  <label>Password</label>
+              </div>
+                  <input name="submit" type="Submit" value="Login">
+              <div class="signup_link">
+                  Don't have an Account? <a href="../register/register.html">Register Here</a>
+              </div>
+          </form>
+      </div>
+    </section>  
+  </div>
+  </body>
+</html>
