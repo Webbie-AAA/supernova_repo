@@ -3,13 +3,14 @@ const registration_section = document.querySelector('#register_form')
 
 registration_section.addEventListener("submit", async (e) =>{
     e.preventDefault()
-    const first_name = e.target.first_name.value
-    const last_name = e.target.last_name.value
-    const email = e.target.email.value
     const password = e.target.password.value
     const confirm_password = e.target.confirm_password.value
+
+    if (password != confirm_password){
+        alert("Passwords do not match!")
+        return;
+    }
     const form = new FormData(e.target)
-    // console.log(form)
     
     const options = {
     method: 'POST',
