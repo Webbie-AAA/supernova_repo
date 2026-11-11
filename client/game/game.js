@@ -98,7 +98,7 @@ const questionText = document.querySelector("#question-section");
 const form = document.querySelector("#multiple-choice-section form");
 const nextBtn = document.querySelector("#next-btn");
 
-const RESULTS_PAGE = "results.html";
+const RESULTS_PAGE = "../result/result.html";
 
 let currentIndex = 0;  // which question is showing (0 = question 1)
 let score = 0;         // kept in the background, not shown on this page
@@ -146,3 +146,5 @@ nextBtn.addEventListener("click", () => {
 
 // Start the quiz
 showQuestion();
+
+module.exports = score;
