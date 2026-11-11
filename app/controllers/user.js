@@ -1,6 +1,4 @@
-const Student = require('../models/Student')
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const Student = require('../models/User')
 
 async function login(req, res) {
     const data = req.body;
@@ -8,23 +6,15 @@ async function login(req, res) {
         const user = await Student.getOneByEmail(data.email);
         if (!user){
             throw new Error ('No user with this email')
-        }
-
-        const match = await bcrypt.compare (data.password, user.password);
-
-        if (match){
-            const payload = {email: user.email}
-            const sendToken = (err, token) => {
-                if (err) {
-                    throw new Error ("Error in token generation")
-                }
-                res.status(200).json({success: true, token: token});
-            }
-            
-            jwt.sign(payload, process.env.SECRET_TOKEN,{expiresIn: 3600}, sendToken)
-
-        }else{
-            throw new Error ('User cannot be authenticated')
+        }        
+        const match = data.password === user.password;
+        if (match) {
+            res.status(200).json({
+                success: true,
+                message: "Login successful"
+            });
+        } else {
+            throw new Error('User cannot be authenticated')
         }
 
     } catch (err){
@@ -32,4 +22,5 @@ async function login(req, res) {
     }
 }
 
-module.exports = {register, login }   
+
+module.exports = {login}
