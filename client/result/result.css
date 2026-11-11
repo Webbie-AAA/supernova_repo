@@ -1,0 +1,176 @@
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .navbar-title {
+        font-size: 32px;
+    }
+
+    .nav-link {
+        font-size: 18px;
+    }
+
+    .start-button {
+        width: 170px;
+        font-size: 23px;
+    }
+
+    .activity-card {
+        min-height: 340px;
+    }
+
+    footer {
+        min-height: 80px;
+    }
+
+    footer a {
+        font-size: 20px;
+    }
+}
+
+.navbar {
+    background-color: #202020;
+    border: 3px solid #111;
+    min-height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-title {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    text-decoration: none;
+}
+
+.nav-link {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #f0d7a3;
+}
+
+
+.result-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 65vh;
+    padding: 40px 20px;
+}
+
+.result-card {
+    background-color: white;
+    border: 3px solid #a09d96;
+    border-radius: 12px;
+
+    width: 100%;
+    max-width: 750px;
+
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.result-card h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.result-card h2 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.result-card p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.result-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.result-button {
+    display: inline-block;
+    min-width: 190px;
+
+    background-color: #777;
+    color: white;
+
+    border: 3px solid #222;
+    border-radius: 20px;
+
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+
+    font-size: 22px;
+    font-weight: 500;
+
+    transition: background-color 0.5s ease,
+                transform 0.5s ease;
+}
+
+.result-button:hover {
+    background-color: #f0d7a3;
+    color: white;
+    transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+
+    .result-card {
+        padding: 35px 20px;
+    }
+
+    .result-card h1 {
+        font-size: 28px;
+    }
+
+    .result-card h2 {
+        font-size: 26px;
+    }
+
+    .result-card p {
+        font-size: 18px;
+    }
+
+    .result-button {
+        min-width: 170px;
+        font-size: 20px;
+    }
+}
+
+footer {
+    min-height: 80px;
+    background-color: #202020;
+    border: 3px solid #111;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #f0d7a3;
+}
