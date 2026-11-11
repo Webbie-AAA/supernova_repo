@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Colour palette for the quiz area (nav and footer keep their own colours) */
+:root {
+    --ink: #2b2118;
+    --dark: #202020;
+    --gold: #c9a45c;
+    --gold-light: #f0d7a3;
+    --gold-wash: #fbf1db;
+    --parchment: #fffdf7;
+    --stone: #a09d96;
+    --stone-light: #ddd6c8;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* ---------- Quiz card ---------- */
+
+.game-play-section {
+    flex: 1;
+    background-color: #F5F5F0;
+    padding: 48px 5%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.quiz-card {
+    width: 100%;
+    max-width: 760px;
+    background-color: var(--parchment);
+    border: 3px solid var(--stone);
+    border-radius: 16px;
+    padding: 36px 44px 32px;
+    /* outer shadow + thin gold inner frame */
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.08),
+        inset 0 0 0 8px var(--parchment),
+        inset 0 0 0 10px rgba(201, 164, 92, 0.45);
+}
+
+
+/* ---------- Header + progress ---------- */
+
+#question-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+#question-header h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: var(--ink);
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+.progress-track {
+    width: 100%;
+    max-width: 420px;
+    height: 10px;
+    margin: 0 auto;
+    background-color: var(--stone-light);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+
+/* ---------- Question ---------- */
+
+#question-section {
+    font-family: "Metamorphous", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(1.25rem, 2.6vw, 1.65rem);
+    line-height: 1.45;
+    color: var(--ink);
+    text-align: center;
+    padding-bottom: 24px;
+    margin-bottom: 28px;
+    border-bottom: 2px solid rgba(201, 164, 92, 0.5);
+}
+
+
+/* ---------- Answer options ---------- */
+
+#multiple-choice-section {
+    font-family: "Metamorphous", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#multiple-choice-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 20px;
+    background-color: white;
+    border: 2px solid var(--stone-light);
+    border-radius: 12px;
+    font-size: 1.15rem;
+    color: var(--ink);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease,
+        transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hide the default radio circle but keep it usable with the keyboard */
+.option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.option-letter {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--stone);
+    border-radius: 50%;
+    font-family: "Cinzel Decorative", serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--ink);
+    background-color: var(--parchment);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.option:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Selected answer */
+.option:has(input:checked) {
+    background-color: var(--gold-wash);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(201, 164, 92, 0.25);
+}
+
+.option:has(input:checked) .option-letter {
+    background-color: var(--dark);
+    border-color: var(--dark);
+    color: var(--gold-light);
+}
+
+/* Visible focus ring for keyboard users */
+.option:has(input:focus-visible) {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+/* ---------- Next button ---------- */
+
+#next-question-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+#next-btn {
+    display: inline-block;
+    width: 190px;
+    background-color: var(--dark);
+    color: white;
+    border: 3px solid #111;
+    border-radius: 20px;
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    font-family: "Cinzel Decorative", serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+#next-btn:hover {
+    background-color: var(--gold-light);
+    color: var(--dark);
+    transform: scale(1.04);
+}
+
+#next-btn:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+/* Use this if your JS disables Next until an answer is picked */
+#next-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    background-color: var(--dark);
+    color: white;
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .navbar-title {
+        font-size: 32px;
+    }
+
+    .nav-link {
+        font-size: 18px;
+    }
+
+    .game-play-section {
+        padding: 28px 4%;
+    }
+
+    .quiz-card {
+        padding: 28px 22px 24px;
+    }
+
+    .option {
+        padding: 12px 14px;
+        gap: 14px;
+        font-size: 1.05rem;
+    }
+
+    #next-btn {
+        width: 170px;
+        font-size: 21px;
+    }
+
+    footer {
+        min-height: 80px;
+    }
+
+    footer a {
+        font-size: 20px;
+    }
+}
+
+.navbar {
+    background-color: #202020;
+    border: 3px solid #111;
+    min-height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-title {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    text-decoration: none;
+}
+
+.nav-link {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #f0d7a3;
+}
+
+
+footer {
+    min-height: 80px;
+    background-color: #202020;
+    border: 3px solid #111;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #f0d7a3;
+}
