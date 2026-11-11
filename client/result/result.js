@@ -1,4 +1,7 @@
-const score = 0
+const params = new URLSearchParams(window.location.search);
+
+const score = Number(params.get("score"));
+const total = Number(params.get("total"));
 
 // Get HTML elements
 const resultTitle = document.getElementById("result-title");
@@ -20,7 +23,7 @@ if (score === null || score < 0) {
                 Play Again
             </a>
 
-            <a href="dashboard.html" class="result-button">
+            <a href="../dashboard/dashboard.html" class="result-button">
                 Back to Home
             </a>
         `;
@@ -41,7 +44,7 @@ if (score === null || score < 0) {
         `;
 
         resultButtons.innerHTML = `
-            <a href="" class="result-button">
+            <a href="../game/gamePlay.html" class="result-button">
                 Play Again
             </a>
 
@@ -61,11 +64,11 @@ if (score === null || score < 0) {
         `;
 
         resultButtons.innerHTML = `
-            <a href="" class="result-button">
+            <a href="../game/gamePlay.html" class="result-button">
                 Try Again
             </a>
 
-            <a href="" class="result-button">
+            <a href="../flashcards/flashcards.html" class="result-button">
                 Go to Flashcards
             </a>
         `;

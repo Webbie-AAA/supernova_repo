@@ -1,4 +1,5 @@
 const login_section = document.querySelector('#login_form')
+const loginError = document.querySelector('#login-error');
 
 login_section.addEventListener('submit', async (e)=>{
     e.preventDefault()
@@ -26,7 +27,7 @@ login_section.addEventListener('submit', async (e)=>{
         if (response.status == 200) {
             window.location.assign("../dashboard/dashboard.html")
         } else {
-            alert(data.error || "Login failed.");
+            loginError.textContent = "Incorrect email or password";
         }
 
     } catch (error) {

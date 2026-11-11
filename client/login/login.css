@@ -227,3 +227,14 @@ footer a:hover {
     margin: 20px 0;
   }
 }
+
+#login-error {
+    color: #d32f2f;
+    font-size: 14px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+#login-error:empty {
+    display: none;
+}
