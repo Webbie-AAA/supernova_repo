@@ -12,9 +12,21 @@ body {
 }
 
 h1 {
+    text-align:center;
     font-family: "Cinzel decorative", serif;
     font-weight: 700;
     font-style: normal;
+}
+
+.instructions {
+    font-family: "Metamorphous", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin:auto;
+    border: 5px;
+    padding: 30px;
+    width: 700px;
+    /* padding: 30px; */
 }
 
 @media (max-width: 768px) {
@@ -38,7 +50,7 @@ h1 {
         font-size: 23px;
     }
 
-    .activity-card {
+    .choice-card {
         min-height: 340px;
     }
 
@@ -79,7 +91,7 @@ h1 {
 }
 
 
-.dashboard-section {
+.game-start-section {
     flex: 1;
     background-color: #F5F5F0;
     padding: 20px 5%;
@@ -102,7 +114,7 @@ h1 {
 }
 
 
-.activity-card {
+.choice-card {
     background-color: white;
     border: 3px solid #a09d96;
     border-radius: 12px;
@@ -122,11 +134,11 @@ h1 {
 
 }
 
-.activity-card:hover {
+.choice-card:hover {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
 }
 
-.activity-card h2 {
+.choice-card h2 {
     font-size: 30px;
     margin-bottom: 30px;
     text-align: center;
@@ -135,7 +147,7 @@ h1 {
     padding-bottom: 10px;
 }
 
-.activity-card p {
+.choice-card p {
     font-size: 19px;
     line-height: 1.6;
     text-align: center;
@@ -144,13 +156,13 @@ h1 {
 
 }
 
-.activities .col-md-6:first-child .activity-card {
+.choices .col-md-6:first-child .choice-card {
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)),
         url("../assets/flashcard.jpg");
 }
 
-.activities .col-md-6:last-child .activity-card {
+.choices .col-md-6:last-child .choice-card {
     background-image:
         linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)),
         url("../assets/greatescape.jpg");
@@ -171,7 +183,7 @@ h1 {
     margin-top: auto;
     margin-bottom: 20px;
     transition: background-color 0.5s ease,
-    transform 0.5s ease;
+        transform 0.5s ease;
 }
 
 .start-button:hover {
@@ -200,5 +212,3 @@ footer a {
 footer a:hover {
     color: #f0d7a3;
 }
-
-
