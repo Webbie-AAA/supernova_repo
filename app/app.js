@@ -1,23 +1,24 @@
 const express = require('express');
 const cors = require('cors');
 const app = express()
-const routing = require('./routers/user')
+const routing = require('./routers/user');
+const userRouter = require('./routers/user');
 app.use(cors())
 app.use(express.json())
 
-app.use('/users',routing)
+app.use('/users',userRouter)
 
 app.get ('/',(req,res)=>{
     res.send('Hello There! Hang on x')
 })
 
-app.post('/users/register', (req, res) => {
-    console.log(req.body);
+app.use("/users", userRouter)
 
-    res.status(201).json({
-        message: "Registration successful"
-    });
-});
+
+app.use((req, res, next)=>{
+    console.log(`${req.method} ${req.path} (${req.url})`)
+    next();
+})
 
 
 module.exports = app

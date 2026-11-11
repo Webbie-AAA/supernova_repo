@@ -17,19 +17,18 @@ CREATE TABLE enrolled_students (
     id INT GENERATED ALWAYS AS IDENTITY,
     first_name VARCHAR(150) NOT NULL,
     last_name VARCHAR(150) NOT NULL,
-    class_group VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR NOT NULL UNIQUE,
     PRIMARY KEY(id)
 );
 
 
-INSERT INTO enrolled_students (first_name, last_name, class_group, email, password)
+INSERT INTO enrolled_students (first_name, last_name, email, password)
 VALUES 
-    ('Anna', 'Sosnowska', 'class A', 'anna_sosnowska@lafosse.outlook.com', 'anna123'),
-    ('Dunjee', 'Jamsran', 'class A', 'dunjee_jamsran@lafosse.outlook.com', 'dunjee456'),
-    ('Nathan', 'Min Hein', 'class A', 'nathan_min_hein@lafosse.outlook.com', 'nathan789'),
-    ('Umel', 'Al-Mousawi', 'class A', 'umel_al_mousawi@lafosee.outlook.com', 'umel101');
+    ('Anna', 'Sosnowska','anna_sosnowska@lafosse.outlook.com', 'anna123'),
+    ('Dunjee', 'Jamsran','dunjee_jamsran@lafosse.outlook.com', 'dunjee456'),
+    ('Nathan', 'Min Hein','nathan_min_hein@lafosse.outlook.com', 'nathan789'),
+    ('Umel', 'Al-Mousawi','umel_al_mousawi@lafosee.outlook.com', 'umel101');
 
 
 CREATE TABLE student_scores (

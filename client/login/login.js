@@ -3,6 +3,9 @@ const loginError = document.querySelector('#login-error');
 
 login_section.addEventListener('submit', async (e)=>{
     e.preventDefault()
+
+
+    const form = new FormData(e.target)
     
     const email = e.target.user_email.value;
     const password = e.target.user_password.value;
