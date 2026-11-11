@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +16,6 @@ body {
     background-color: #202020;
     border: 3px solid #111;
     min-height: 100px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,12 +38,10 @@ body {
     color: #f0d7a3;
 }
 
-
 footer {
     min-height: 80px;
     background-color: #202020;
     border: 3px solid #111;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,9 +70,99 @@ footer a:hover {
 }
 
 .welcome-section h1 {
-    font-size: 30px;
+    font-size: 42px;
+    font-family: "Cinzel decorative", serif;
     font-weight: bold;
     margin-bottom: 8px;
 }
+
+.welcome-section p {
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.flashcard-topics {
+    padding: 10px 2%;
+}
+
+.topic-card {
+    background-color: white;
+    border: 3px solid #a09d96;
+    border-radius: 12px;
+    min-height: 260px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px 25px;
+    margin-bottom: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.topic-card:hover {
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.topic-card h2 {
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    border-bottom: 2.5px solid rgba(34, 34, 34, 0.4);
+    width: 100%;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.details-button {
+    display: inline-block;
+    font-family: "Cinzel decorative", serif;
+    width: 190px;
+    background-color: #777;
+    color: white;
+    border: 3px solid #222;
+    border-radius: 20px;
+    padding: 8px 10px;
+    font-size: 22px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.details-button:hover {
+    background-color: #f0d7a3;
+    color: #222;
+}
+
+.flashcard-answer {
+    width: 100%;
+    border-radius: 8px;
+    padding: 0 20px;
+    margin-top: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 1s ease, opacity 0.8s ease, padding 1s ease, margin 1s ease;
+}
+
+.flashcard-answer.show {
+    max-height: 300px;
+    opacity: 1;
+    padding: 20px;
+    margin-top: 25px;
+}
+
+.flashcard-answer h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.flashcard-answer p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
 
 
