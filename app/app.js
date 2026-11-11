@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const app = express()
-const userRouting = require('./routers/route')
+const router = require('../app/routers/user')
 app.use(cors())
 app.use(express.json())
 
@@ -9,7 +9,8 @@ app.get ('/',(req,res)=>{
     res.send('Hello There! Hang on x')
 })
 
-app.use('/', '/userRouting' )
+app.use('/users', router)
+
 app.post('/users/register', (req, res) => {
     console.log(req.body);
 
@@ -27,7 +28,7 @@ app.post('/users/login', (req, res)=> {
 });
 
 app.use('/users/login', (req, res)=>{
-    console.log(log.method, log.URL)
+    console.log(log.method, log.pathURL)
 })
 
 module.exports = app
