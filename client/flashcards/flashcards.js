@@ -1,24 +1,16 @@
-const container = document.getElementById("flashcards-container");
+const buttons = document.querySelectorAll(".details-button");
 
-function displayFlashcards(flashcards) {
-    container.innerHTML = "";
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
 
-    flashcards.forEach((flashcard) => {
-        const card = document.createElement("div");
+        const answer = button.previousElementSibling;;
 
-        card.className = "col-md-6";
+        answer.classList.toggle("show");
 
-        card.innerHTML = `
-            <div class="topic-card">
-                <h2>${flashcard.question}</h2>
-                <div class="flashcard-answer">
-                    <p>${flashcard.answer}</p>
-                    <p>${flashcard.explanation || ""}</p>
-                </div>
-                <button class="details-button">Reveal</button>
-            </div>
-        `;
-
-        container.appendChild(card);
+        if (answer.classList.contains("show")) {
+            button.textContent = "Hide";
+        } else {
+            button.textContent = "Reveal";
+        }
     });
-}
+});
