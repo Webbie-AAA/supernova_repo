@@ -20,6 +20,18 @@ class Student {
         return new Student(response.rows[0]);
     }
 
+    static async createUserAccount(data){
+        const {first_name, last_name, email, password} = data
+
+        const response = await db.query("INSERT INTO enrolled_students (first_name, last_name, email, password) VALUES ($1, $2, $3, $4) RETURNING *;", 
+            [first_name, last_name, email, password])
+            const newUser = response.rows[0]
+            
+    
+            return new Student(newUser)
+    }
+
 }
+
 
 module.exports = Student;
