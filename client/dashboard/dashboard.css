@@ -11,40 +11,6 @@ body {
     flex-direction: column;
 }
 
-@media (max-width: 768px) {
-
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 20px;
-    }
-
-    .navbar-title {
-        font-size: 32px;
-    }
-
-    .nav-link {
-        font-size: 18px;
-    }
-
-    .start-button {
-        width: 170px;
-        font-size: 23px;
-    }
-
-    .activity-card {
-        min-height: 340px;
-    }
-
-    footer {
-        min-height: 80px;
-    }
-
-    footer a {
-        font-size: 20px;
-    }
-}
-
 .navbar {
     background-color: #202020;
     border: 3px solid #111;
