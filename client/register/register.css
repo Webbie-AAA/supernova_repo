@@ -9,6 +9,67 @@ html, body {
   width: 100%;
   min-height: 100%;
 }
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .navbar-title {
+        font-size: 32px;
+    }
+
+    .nav-link {
+        font-size: 18px;
+    }
+
+    .start-button {
+        width: 170px;
+        font-size: 23px;
+    }
+
+    .activity-card {
+        min-height: 340px;
+    }
+
+    footer {
+        min-height: 80px;
+    }
+
+    footer a {
+        font-size: 20px;
+    }
+}
+
+.navbar {
+    background-color: #202020;
+    border: 3px solid #111;
+    min-height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-title {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    text-decoration: none;
+}
+
+.nav-link {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #f0d7a3;
+}
+
 
 body {
   font-family: Roboto, Arial, sans-serif;

@@ -5,8 +5,9 @@ login_section.addEventListener('submit', async (e)=>{
     e.preventDefault()
     console.log(e)
 
-    const email = e.target.input.email.value
+    const email = e.target.user_email.value;
     console.log(email)
+
 })
     // const form = new FormData(e.target)}
     // console.log(form)
