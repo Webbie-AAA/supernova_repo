@@ -5,7 +5,9 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-app.use(express.json());
+app.get ('/',(req,res)=>{
+    res.send('Hello There! Hang on x')
+})
 
 app.post('/users/register', (req, res) => {
     console.log(req.body);
