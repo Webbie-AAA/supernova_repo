@@ -18,15 +18,33 @@ h1 {
     font-style: normal;
 }
 
-.instructions {
+:root {
+    --ink: #2b2118;
+    --dark: #202020;
+    --gold: #c9a45c;
+    --gold-light: #f0d7a3;
+    --gold-wash: #fbf1db;
+    --parchment: #fffdf7;
+    --stone: #a09d96;
+    --stone-light: #ddd6c8;
+}
+
+.instruction-section {
+    margin: auto;
     font-family: "Metamorphous", serif;
     font-weight: 400;
     font-style: normal;
-    margin:auto;
-    border: 5px;
-    padding: 30px;
-    width: 700px;
-    /* padding: 30px; */
+    width: 100%;
+    max-width: 760px;
+    background-color: var(--parchment);
+    border: 3px solid var(--stone);
+    border-radius: 16px;
+    padding: 36px 44px 32px;
+    /* outer shadow + thin gold inner frame */
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.08),
+        inset 0 0 0 8px var(--parchment),
+        inset 0 0 0 10px rgba(201, 164, 92, 0.45);
 }
 
 @media (max-width: 768px) {
