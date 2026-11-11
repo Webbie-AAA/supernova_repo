@@ -12,8 +12,8 @@ class Student {
     }
 
     static async getOneByEmail(email) {
-        const response = await db.query("SELECT * FROM enrolled_students WHERE email = $1", [email]);
-        console.log(response)
+        const response = await db.query("SELECT * FROM enrolled_students WHERE email = $1;", [email]);
+
         if (response.rows.length != 1) {
             throw new Error("Unable to locate the student.");
         }

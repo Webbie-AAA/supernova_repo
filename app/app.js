@@ -1,12 +1,11 @@
 const express = require('express');
 const cors = require('cors');
 const app = express()
-const routing = require('../app/routers/user');
-const userRouter = require('../app/routers/user');
+const routing = require('./routers/user')
 app.use(cors())
 app.use(express.json())
 
-app.use('/login',routing)
+app.use('/users',routing)
 
 app.get ('/',(req,res)=>{
     res.send('Hello There! Hang on x')

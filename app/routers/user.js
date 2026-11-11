@@ -8,5 +8,4 @@ const userRouter = Router();
 userRouter.post("/login", userController.login);
 userRouter.post("/register", userController)
 
-
-module.exports = userRouter;
+module.exports = router;
