@@ -10,7 +10,7 @@ registration_section.addEventListener("submit", async (e) =>{
     const confirm_password = e.target.confirm_password.value
     const form = new FormData(e.target)
     // console.log(form)
-
+    
     const options = {
     method: 'POST',
     headers: {
