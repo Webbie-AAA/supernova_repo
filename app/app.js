@@ -1,25 +1,24 @@
 const express = require('express');
 const cors = require('cors');
-const app = express()
-const routing = require('./routers/user');
+
+const app = express();
+
 const userRouter = require('./routers/user');
-app.use(cors())
-app.use(express.json())
+const flashcardsRouter = require('./routers/flashcards');
 
-app.use('/users',userRouter)
+app.use(cors());
+app.use(express.json());
 
-app.get ('/',(req,res)=>{
-    res.send('Hello There! Hang on x')
-})
-
-app.use("/users", userRouter)
-
-
-app.use((req, res, next)=>{
-    console.log(`${req.method} ${req.path} (${req.url})`)
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.path} (${req.url})`);
     next();
-})
+});
 
+app.use('/users', userRouter);
+app.use('/api/flashcards', flashcardsRouter);
 
-module.exports = app
+app.get('/', (req, res) => {
+    res.send('Hello There! Hang on x');
+});
 
+module.exports = app;
