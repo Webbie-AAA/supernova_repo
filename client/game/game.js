@@ -1,3 +1,27 @@
+const music = document.querySelector("#background-music");
+const musicButton = document.querySelector("#music-toggle");
+const musicIcon = musicButton.querySelector("i");
+
+musicButton.addEventListener("click", async () => {
+    if (music.paused) {
+        try {
+            await music.play();
+
+            musicIcon.className = "bi bi-volume-up-fill";
+            musicButton.setAttribute("aria-label", "Turn music off");
+            musicButton.setAttribute("title", "Turn music off");
+        } catch (error) {
+            console.error("Unable to play music:", error);
+        }
+    } else {
+        music.pause();
+
+        musicIcon.className = "bi bi-volume-mute-fill";
+        musicButton.setAttribute("aria-label", "Play music");
+        musicButton.setAttribute("title", "Play music");
+    }
+});
+
 const questions = [
     {
         question: "On what date was the Battle of Hastings fought?",
@@ -146,5 +170,7 @@ nextBtn.addEventListener("click", () => {
 
 // Start the quiz
 showQuestion();
+
+
 
 module.exports = score;
