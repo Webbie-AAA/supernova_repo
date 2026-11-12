@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/users', userRouter);
-app.use('/api/flashcards', flashcardsRouter);
+app.use('/flashcards', flashcardsRouter);
 
 app.get('/', (req, res) => {
     res.send('Hello There! Hang on x');

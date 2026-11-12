@@ -34,9 +34,9 @@ To solve the problem, we decided that gamification of the learning process was k
 The demographic we have chosen to aim or project for are Year 7 History students. 
 
 As a result we came up with __The Great Escape__, 
-an educational escape room, where students trapped in different historical periods or locations must solve educational puzzles to escape. 
+an educational escape room, where students trapped in different historical periods or locations where each answer to a question about the historical subject takes them a step closer to freedom. 
 
-We aim for teachers to incorporate this into their classrooms as a learning tool, that supplements other teaching resources - but we believe that the gamification of the learning process would naturally lead to better engagement and less pressure when it comes to information recall. 
+We aim for teachers to incorporate this into their classrooms as a learning tool, supplements other teaching resources - but we believe that the gamification of the learning process would naturally lead to better engagement and less pressure when it comes to information recall. 
 
 ## Getting Started
 
@@ -66,6 +66,12 @@ We aim for teachers to incorporate this into their classrooms as a learning tool
 
         - __pg__
 
+        - __morgan__
+
+        - __jest__
+
+        - __supertest__
+
 4. Setup your database
 
     - Create a database on [Supabase](https://supabase.com/) or other cloud-based database management systems platform
@@ -94,7 +100,6 @@ We aim for teachers to incorporate this into their classrooms as a learning tool
     - Run `npm run start` to run the server in __production mode__
 
 
-
 ## Database Schema
 
 This database was created with __Postgres__
@@ -119,12 +124,43 @@ password VARCHAR NOT NULL UNIQUE,
 PRIMARY KEY(id)
 ```
 
+`flashcards`
+
+```sql
+CREATE TABLE flashcards (
+    flashcard_id  INTEGER      PRIMARY KEY,
+    question      VARCHAR(255) NOT NULL,
+    answer        VARCHAR(255) NOT NULL,
+    explanation   TEXT
+);
+```
+
+
+
 ### Base URL
 `https://localhost:<port>/the_great_escape` 
 
 ### API Endpoints
 
+`\users\login` - 
+user makes a post request to login after entering their (already registered email and password)
+`\users\register `- user makes a post request to register after entering sign up details, which include first_name, second_name, email, their chosen password and a confirmation password. 
+`\users\flashcards `- user makes a get request to view all the flashcards when they click on the button to play
 
 
+### Future Features
 
+- A forgot password option
+
+- A delete account option
+
+- 
+
+- A teachers dashboard that gives them view of all student scores
+
+- More testing coverage
+
+### Bugs
+
+- 
 
