@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 
@@ -17,8 +18,11 @@ app.use((req, res, next) => {
 app.use('/users', userRouter);
 app.use('/flashcards', flashcardsRouter);
 
-api.get("/", (req, res) => {
-    res.redirect('../../client/homepage/homepage.html');
-})
+app.use(express.static(path.join(__dirname, '..', 'client')));
+
+
+app.get('/', (req, res) => {
+    res.redirect('/homepage/homepage.html');
+});
 
 module.exports = app;
