@@ -154,7 +154,7 @@ user makes a post request to login after entering their (already registered emai
 
 - A delete account option
 
-- 
+- Password encryption for security
 
 - A teachers dashboard that gives them view of all student scores
 
