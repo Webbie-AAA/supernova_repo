@@ -4,7 +4,7 @@ async function loadFlashcards() {
     container.textContent = "Loading flashcards...";
 
     try {
-        const response = await fetch("http://localhost:3000/api/flashcards");
+        const response = await fetch("http://localhost:3000/flashcards");
 
         if (!response.ok) {
             throw new Error("Failed to load flashcards");

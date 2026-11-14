@@ -6,13 +6,12 @@ async function getAllFlashcards(req, res) {
 
         res.status(200).json(flashcards);
     } catch (error) {
-        console.error('Error retrieving flashcards:', error);
+        res.status(404).send({error: error.message});
 
-        res.status(500).json({
-            message: 'Unable to retrieve flashcards'
-        });
+        res.status(500).send({error: error.status});
     }
 }
+
 
 module.exports = {
     getAllFlashcards
